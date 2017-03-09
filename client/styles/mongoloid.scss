@@ -1,0 +1,27 @@
+label.mongol__error-message {
+  color: #ea5959!important;
+  padding-top: 0.5em;
+  text-transform: capitalize;
+
+  -webkit-animation-name: shake;
+  animation-name: shake;
+  -webkit-animation-duration: 0.4s;
+  animation-duration: 0.4s;
+  -webkit-animation-fill-mode: both;
+  animation-fill-mode: both;
+  -webkit-animation-delay: 1s;
+  animation-delay: 1s;
+}
+
+//.error_color{
+//  color: #e24a4a!important;
+//  outline: none!important;
+//}
+//
+//.mongoloid__error {
+//  @extend .error_color;
+//
+//  & .contenedor-formulario .formulario .input-group label.label, & .contenedor-formulario .formulario .input-group input[type="text"]:focus, .contenedor-formulario .formulario .input-group input[type="text"]:active, .contenedor-formulario .formulario .input-group input[type="email"]:focus, .contenedor-formulario .formulario .input-group input[type="email"]:active, .contenedor-formulario .formulario .input-group input[type="password"]:focus, .contenedor-formulario .formulario .input-group input[type="password"]:active, .contenedor-formulario .formulario .input-group input[type="date"]:focus, .contenedor-formulario .formulario .input-group input[type="date"]:active, .contenedor-formulario .formulario .input-group textarea:focus, .contenedor-formulario .formulario .input-group textarea:active, .contenedor-formulario .formulario .input-group select:focus, .contenedor-formulario .formulario .input-group select:active {
+//    @extend .error_color;
+//  }
+//}

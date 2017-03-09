@@ -1,0 +1,38 @@
+image: spittet/node-mongodb
+
+pipelines:
+  default:
+    - step:
+       script:
+         - curl -sL https://deb.nodesource.com/setup_6.x | sh
+         - apt-get update
+         - apt-get install -y nodejs
+         - npm --version
+         - npm install mongoose
+         - service mongod start
+         - curl https://install.meteor.com/ | sh
+         - meteor npm install
+         - meteor npm install mocha-phantomjs
+         - export MONGO_URL=mongodb://127.0.0.1:27017/local
+         - npm run test
+         - npm run coverage
+         #- meteor run --unsafe-perm --once --raw-logs
+         #- exit
+  branches:
+    dev:
+      - step:
+          script:
+            - curl -sL https://deb.nodesource.com/setup_6.x | sh
+            - apt-get update
+            - apt-get install -y nodejs
+            - npm --version
+            - npm install mongoose
+            - service mongod start
+            - curl https://install.meteor.com/ | sh
+            - meteor npm install
+            - meteor npm install mocha-phantomjs
+            - export MONGO_URL=mongodb://127.0.0.1:27017/local
+            - npm run test
+            - npm run coverage
+            #- meteor run --unsafe-perm --once --raw-logs
+            #- exit

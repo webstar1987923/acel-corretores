@@ -1,0 +1,26 @@
+Feature: transferencia de dinheiro do mesmo banco
+    
+     Como dono da conta
+     Quero transferir dinheiro da minha conta para outros titulares de conta no mesmo banco
+     Para que eu possa pagar minhas dividas
+    
+     Background :
+     Given Dado eu ter uma conta com o final 12345
+     And E "Joao" ter uma conta com o final 12345
+    
+     @watch
+     Scenario: A conta tem fundos suficientes
+     Given Dado o saldo da minha conta de R$ 100
+     And E o saldo da conta do "Joao" ser de R$ 0
+     When Quando eu transferir R$ 20 para a conta do "Joao"
+     Then Entao o saldo da minha conta deve ser R$ 80
+     And E o saldo de conta do "Joao" deve ser R$ 20
+    
+     Scenario: A conta tem fundos insuficientes
+     Given Dado o saldo da minha conta e de R$ 10
+     And E o saldo da conta do "Joao" e de R$ 50
+     When Quando eu transferir R$ 20 para a conta do "James"
+     Then Entao eu deveria ser informado que de que nao ha fundos suficientes
+     And E o saldo da minha conta deve ser de R$ 10
+     And E o saldo de conta do "Joao" deve ser R$ 50
+
